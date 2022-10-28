@@ -32,20 +32,24 @@ are based on [Tao Wang](https://www.cs.sfu.ca/~taowang/wf/) et al.'s popular
 Each unpacked dataset contains a data folder with the actual traces. The
 structure here varies slightly depending on how we mapped the original
 real-world structure. Both real-world and simulated datasets contain csv
-folders. Inside each folder is ten csv files for ten folds. We used fold-0 for
-the results in the paper. Entries in a csv file point to a data file and
+folders. Inside each folder is ten csv files for ten folds. We used `fold-0.csv`
+for the results in the paper. Entries in a csv file point to a data file and
 documents its use. For example, let's look at CoMPS real-world:
 
 ```
-$ head -n 1 comps-rw/csv-closed/fold-0.csv 
+$ head -n 4 comps-rw/csv-closed/fold-0.csv 
 class,file,is_merged,is_split,is_empty,is_train,is_valid,is_test
+0,0/0,False,True,False,True,False,False
+0,0/1,False,True,False,True,False,False
+0,0/2,False,True,False,True,False,False
 ```
 
 Here, each entry in the csv specifies the class (website) and six true/false flags:
 - is_merged: true if the trace is a merged trace of multiple paths (only used
   for training)
 - is_split: true if the trace is split, i.e., from one path observed by our
-  attacker.
+  attacker. Typically the file path will encode which path it is from in the
+  simulation run.
 - is_empty: true if the trace is empty.
 - is_train: true if the sample is for training.
 - is_valid: true if the sample is for validation.
@@ -53,6 +57,6 @@ Here, each entry in the csv specifies the class (website) and six true/false fla
 
 ### Splitting Simulators
 We implemented simulators for CoMPS, HyWF, and TS-BWR5. They can be found in the
-[sim/](https://github.com/m-bec/Splitting-Hairs-and-Network-Traces/tree/main/sim)
+[simulators/](https://github.com/m-bec/Splitting-Hairs-and-Network-Traces/tree/main/simulators)
 folder. These simulators were used to generated the simulated datasets linked
 above.
