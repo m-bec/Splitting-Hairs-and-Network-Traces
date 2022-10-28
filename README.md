@@ -1,3 +1,58 @@
 # Splitting-Hairs-and-Network-Traces
 
-test
+TODO: instructions for running Maturesc on a dataset with example terminal
+output.
+
+```
+$ python3 maturesc.py -someargs dataset/folder
+terminal output
+terminal output
+terminal output
+terminal output
+```
+
+Explain output
+
+## Datasets
+Here you can download all the datasets packaged to work with our code:
+- [CoMPS real-world (971M)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/comps-rw.tar)
+- [CoMPS simulated (5.6G)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/comps-wang-x10.tar)
+- [HyWF real-world (639M)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/hywf-rw.tar)
+- [HyWF simulated (5.3G)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/hywf-wang-x10.tar)
+- [TS-BWR5 real-world (484M)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/ts-rw.tar)
+- [TS-BWR5 simulated (6.0G)](https://dart.cse.kau.se/Splitting-Hairs-and-Network-Traces/ts-bwr5-wang-x10.tar)
+
+Please note that the real-world datasets are repackaged datasets from the
+respective authors. We share them here in the re-packaged format for sake of
+transparency and towards reproducability of our results. The simulated datasets
+are based on [Tao Wang](https://www.cs.sfu.ca/~taowang/wf/) et al.'s popular
+[Wa-kNN dataset](https://www.cs.sfu.ca/~taowang/wf/data/knndata.zip).
+
+### Files and Folders
+Each unpacked dataset contains a data folder with the actual traces. The
+structure here varies slightly depending on how we mapped the original
+real-world structure. Both real-world and simulated datasets contain csv
+folders. Inside each folder is ten csv files for ten folds. We used fold-0 for
+the results in the paper. Entries in a csv file point to a data file and
+documents its use. For example, let's look at CoMPS real-world:
+
+```
+$ head -n 1 comps-rw/csv-closed/fold-0.csv 
+class,file,is_merged,is_split,is_empty,is_train,is_valid,is_test
+```
+
+Here, each entry in the csv specifies the class (website) and six true/false flags:
+- is_merged: true if the trace is a merged trace of multiple paths (only used
+  for training)
+- is_split: true if the trace is split, i.e., from one path observed by our
+  attacker.
+- is_empty: true if the trace is empty.
+- is_train: true if the sample is for training.
+- is_valid: true if the sample is for validation.
+- is_test: true if the sample is for testing.
+
+### Splitting Simulators
+We implemented simulators for CoMPS, HyWF, and TS-BWR5. They can be found in the
+[sim/](https://github.com/m-bec/Splitting-Hairs-and-Network-Traces/tree/main/sim)
+folder. These simulators were used to generated the simulated datasets linked
+above.
