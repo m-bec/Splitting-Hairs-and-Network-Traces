@@ -13,11 +13,19 @@ to use Maturesc when evaluating Website Fingerprinting defenses.
 
 ## Maturesc
 The Maturesc script can be found under "maturesc/maturesc.py".
-At minimum, the script needs two parameters: "-dataset" e.g. with "comps-rw" and "-csvdir" e.g. with "sv-closed".
 
+It needs the libraries
+- fastai version 2.6.0
+- torch: version 1.11.0
+
+At minimum, the script needs two parameters: "-dataset" e.g. with "comps-rw" and "-csvdir" e.g. with "csv-closed".
 ```
-$ python3 maturesc.py -dataset comps-rw -csvdir sv-closed
+$ python3 maturesc.py -dataset comps-rw -csvdir csv-closed
 ```
+DATA_ROOT_DIR and DATA_SUB_DIR must be changed in the script to the correct path and subdirectory.
+
+Additional information can be found as comments in the script.
+
 
 ## Datasets
 Here you can download all the datasets packaged to work with our code:
