@@ -12,18 +12,12 @@ others to reproduce our results. A secondary goal is to enable other researchers
 to use Maturesc when evaluating Website Fingerprinting defenses.
 
 ## Maturesc
-TODO: instructions for running Maturesc on a dataset with example terminal
-output.
+The Maturesc script can be found under "maturesc/maturesc.py".
+At minimum, the script needs two parameters: "-dataset" e.g. with "comps-rw" and "-csvdir" e.g. with "sv-closed".
 
 ```
-$ python3 maturesc.py -someargs dataset/folder
-terminal output
-terminal output
-terminal output
-terminal output
+$ python3 maturesc.py -dataset comps-rw -csvdir sv-closed
 ```
-
-Explain output
 
 ## Datasets
 Here you can download all the datasets packaged to work with our code:
