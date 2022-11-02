@@ -11,11 +11,9 @@
 # --------
 
 #===========================
-
 # Used DL libaries and versions for this script:
 # fastai     : 2.6.0
 # torch      : 1.11.0
-
 #===========================
 
 import argparse
