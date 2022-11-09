@@ -1,4 +1,4 @@
-# Splitting-Hairs-and-Network-Traces
+# Splitting Hairs and Network Traces
 
 This is the repository for the paper:
 
