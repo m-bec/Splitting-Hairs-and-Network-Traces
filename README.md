@@ -2,8 +2,8 @@
 
 This is the repository for the paper:
 
-*Matthias Beckerle, Jonathan Magnusson, and Tobias Pulls. Splitting Hairs and
-Network Traces: Improved Attacks Against Traffic Splitting as a Website
+*Matthias Beckerle, Jonathan Magnusson, and Tobias Pulls. [Splitting Hairs and
+Network Traces](https://dl.acm.org/doi/10.1145/3559613.3563199): Improved Attacks Against Traffic Splitting as a Website
 Fingerprinting Defense. WPES 2022.*
 
 The following research artifacts are provided as-is and intended for research
